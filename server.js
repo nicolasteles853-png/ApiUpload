@@ -12,12 +12,12 @@ app.set('trust proxy', 1);
 app.use(cors());
 
 app.use(express.json({
-    limit: '50mb'
+    limit: '100mb'
 }));
 
 app.use(express.urlencoded({
     extended: true,
-    limit: '50mb'
+    limit: '100mb'
 }));
 
 const uploadDir = process.env.VERCEL
@@ -65,7 +65,7 @@ const upload = multer({
     storage: storage,
 
     limits: {
-        fileSize: 50 * 1024 * 1024
+        fileSize: 100 * 1024 * 1024
     }
 
 });
